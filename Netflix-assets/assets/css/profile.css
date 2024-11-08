@@ -1,0 +1,194 @@
+body {
+    background-color: #141414;
+    color: #fff;
+}
+
+/* Stile navbar e logo */
+.netflix-nav {
+    padding: 20px 60px;
+}
+
+.netflix-logo {
+    width: 100px; /* Regola in base alle dimensioni del tuo logo */
+}
+
+/* Container principale con margini laterali */
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* Stile aggiornato per l'icona del profilo */
+.profile-icon {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto; /* Centra il container su mobile */
+}
+
+.profile-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine copra l'intero container */
+    display: block;
+}
+
+.edit-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: black;
+    padding: 4px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.edit-icon i {
+    color: #666; /* Grigio scuro per l'icona */
+    font-size: 14px; /* Dimensione dell'icona */
+}
+
+.edit-icon:hover i {
+    color: #fff; /* Bianco all'hover */
+}
+
+/* Stili form e input */
+.form-control {
+    background-color: #666;
+    border: none;
+    color: white;
+}
+
+.form-select {
+    background-color: #000;
+    border: 1px solid #333;
+    color: white;
+    width: auto;
+}
+
+/* Box impostazioni maturità */
+.maturity-box {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 2px;
+}
+
+.edit-btn {
+    color: #fff;
+    border: 1px solid #fff;
+    background: transparent;
+    padding: 5px 20px;
+    font-size: 0.9em;
+}
+
+/* Sezione bottoni finali */
+.actions-container {
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spazio uniforme tra i bottoni */
+    flex-wrap: wrap; /* Permette il wrap su mobile */
+}
+
+.btn-action {
+    padding: 8px 24px;
+    border: 1px solid #333;
+    border-radius: 2px;
+    min-width: 120px; /* Larghezza minima per uniformità */
+}
+
+.btn-save {
+    background-color: white;
+    color: black;
+}
+
+.btn-cancel, .btn-delete {
+    background-color: transparent;
+    color: #808080;
+}
+
+/* Checkbox styling */
+.form-check {
+    margin: 15px 0;
+    padding-left: 2rem;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-left: -2rem;
+    background-color: transparent;
+    border: 2px solid #808080;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: transparent;
+    border-color: #808080;
+    position: relative;
+}
+
+.form-check-input:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #808080;
+    font-size: 14px;
+}
+
+.form-check-label {
+    color: #808080;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Hover states */
+.form-check-input:hover {
+    border-color: #fff;
+}
+
+.form-check-input:checked:hover {
+    border-color: #fff;
+}
+
+.form-check-input:checked:hover::after {
+    color: #fff;
+}
+
+.form-check-label:hover {
+    color: #fff;
+}
+
+/* Media query per mobile */
+@media (max-width: 768px) {
+    .profile-icon-container {
+        margin-bottom: 2rem; /* Aggiunge spazio sotto l'icona su mobile */
+        text-align: center; /* Assicura il centramento */
+    }
+
+    .main-container {
+        padding: 0 20px; /* Riduce il padding laterale su mobile */
+    }
+
+    .actions-container {
+        gap: 10px; /* Riduce lo spazio tra i bottoni su mobile */
+        padding: 20px 0; /* Riduce il padding verticale */
+    }
+
+    .btn-action {
+        padding: 8px 16px; /* Riduce leggermente il padding orizzontale */
+        min-width: auto; /* Rimuove la larghezza minima su mobile */
+    }
+}
