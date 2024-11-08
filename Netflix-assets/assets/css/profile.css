@@ -15,8 +15,8 @@ body {
 /* Container principale con margini laterali */
 .main-container {
     max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 60px;
+    margin: 100px auto 0; /* Aggiunto margine top per la navbar fixed */
+    padding: 0px 60px;
 }
 
 /* Stile aggiornato per l'icona del profilo */
@@ -191,4 +191,74 @@ body {
         padding: 8px 16px; /* Riduce leggermente il padding orizzontale */
         min-width: auto; /* Rimuove la larghezza minima su mobile */
     }
+}
+
+/* Nuovo stile per il layout desktop */
+@media (min-width: 768px) {
+    .row {
+        justify-content: center;
+        max-width: 700px; /* Limita la larghezza massima della riga */
+        margin: 0 auto;
+    }
+
+    /* Aggiusta le colonne per il layout desktop */
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 25%;
+        padding-right: 2rem; /* Aggiunge spazio tra l'icona e il form */
+    }
+
+    .col-md-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+
+    /* Centra il titolo */
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem !important;
+    }
+
+    /* Stili per i campi del form */
+    .form-control, .form-select {
+        max-width: 100%;
+        background-color: #666;
+    }
+
+    /* Stile per il box della maturità */
+    .maturity-box {
+        background-color: #333;
+        max-width: 100%;
+    }
+
+    /* Centra i bottoni di azione */
+    .actions-container {
+        max-width: 700px;
+        margin: 40px auto 0;
+    }
+}
+
+/* Aggiusta lo stile dei bottoni */
+.btn-action {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-save {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.btn-cancel, .btn-delete {
+    background-color: transparent;
+    color: #808080;
+    border: 1px solid #808080;
+}
+
+.btn-cancel:hover, .btn-delete:hover {
+    color: white;
+    border-color: white;
 }
