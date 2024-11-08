@@ -1,0 +1,246 @@
+/* Variabili  per gestire il layout */
+:root {
+    --netflix-black: #141414;
+    --content-margin: 60px;
+  }
+
+/* Stili base */
+  body {
+    background-color: var(--netflix-black);
+  }
+
+  .navbar {
+    padding-bottom: 30px; /* Altezza della navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .navbar, 
+  .filters-section {
+    background-color: var(--netflix-black) !important;
+  }
+  
+  .netflix-row {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .netflix-row h2 {
+    color: #e5e5e5;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-left: var(--content-margin);
+  }
+  
+  .content-slider {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 0 var(--content-margin);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .content-item {
+    display: inline-block;
+    width: 12.5%;
+    padding: 0 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .content-item img {
+    width: 100%;
+    border-radius: 4px;
+    aspect-ratio: 16/9;
+    transform-origin: center center;
+    transition: all 0.3s ease;
+  }
+  
+  .content-item:hover {
+    transform: scale(1.3);
+    z-index: 2;
+  }
+  
+  /* Responsive breakpoints */
+  @media (max-width: 1399.98px) { /* XXL */
+    .content-item { width: 14.285714%; }
+  }
+  @media (max-width: 1199.98px) { /* XL */
+    .content-item { width: 16.666667%; }
+  }
+  @media (max-width: 991.98px) { /* LG */
+    .content-item { width: 20%; }
+  }
+  @media (max-width: 767.98px) { /* MD */
+    .content-item { width: 25%; }
+    .content-slider { padding: 0 20px; }
+    :root {
+      --content-margin: 20px;
+    }
+    
+    .netflix-row h2 {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 575.98px) { /* SM */
+    .content-item { width: 33.333333%; }
+  }
+
+  /* Stili per il footer */
+  footer {
+    font-size: 13px;
+  }
+  
+  @media (max-width: 767.98px) {
+    footer {
+      font-size: 12px;
+    }
+    
+    footer .social-links {
+      font-size: 18px;
+    }
+    
+    footer .btn-sm {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+    }
+  }
+
+  /* Stili sezione filtri */
+  .filters-section {
+    background-color: var(--netflix-black) !important;
+    padding: 20px var(--content-margin);
+    margin-top: 70px;
+  }
+
+  /* Titolo TV Shows nella sezione filtri desktop */
+  .filters-section h2 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 767.98px) {
+    :root {
+      --content-margin: 20px;
+    }
+    
+    .netflix-row h2 {
+      font-size: 20px;
+    }
+
+    .filters-section h2 {
+      font-size: 20px;
+    }
+  }
+
+  .social-links a {
+    color: #737373;  /* Grigio Netflix per default */
+    text-decoration: none;
+    font-size: 20px;  /* Dimensione icone */
+    transition: color 0.2s ease;
+  }
+
+  .social-links a:hover {
+    color: #e5e5e5;  /* Grigio chiaro al passaggio del mouse */
+  }
+
+  /* Modifica per mobile */
+  @media (max-width: 767.98px) {
+    .content-item img {
+      aspect-ratio: 9/16;
+      object-fit: cover;
+    }
+  }
+
+  /* Nuovo stile per mobile active state */
+  @media (max-width: 767.98px) {
+    .content-item.active {
+      transform: scale(1.1);
+      margin: 0 10px;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      padding-top: 1rem;
+    }
+    
+    .navbar-collapse .navbar-nav {
+      width: 100%;
+    }
+    
+    .navbar-collapse .nav-item {
+      padding: 0.5rem 0;
+    }
+    
+    .navbar-collapse .nav-link {
+      padding-right: 1rem;
+    }
+  }
+
+  /* Stile per le icone nella navbar mobile */
+  @media (max-width: 991.98px) {
+    .navbar .d-flex.d-lg-none .nav-link {
+      color: #e5e5e5; /* Grigio più chiaro e visibile */
+    }
+    
+    .navbar .d-flex.d-lg-none .nav-link:hover {
+      color: #ffffff; /* Bianco al passaggio del mouse */
+    }
+  }
+
+  /* Stile hover solo per desktop */
+  @media (min-width: 768px) {
+    .content-item:hover {
+      transform: scale(1.2);
+      margin: 0 15px;
+      z-index: 2;
+    }
+  }
+
+  /* Stile active solo per mobile */
+  @media (max-width: 767.98px) {
+    .content-item.active {
+      transform: scale(1.1);
+      margin: 0 10px;
+      z-index: 2;
+    }
+    
+    .content-item.active img {
+      transform: scale(1.2);
+    }
+  }
+
+  /* Stili base per il badge */
+  .content-item .badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  /* Stile per desktop (posizione in basso a sinistra) */
+  @media (min-width: 768px) {
+    .content-item .badge {
+      top: auto !important;
+      bottom: 0;
+      left: 8px;
+      right: auto;
+    }
+  }
+
+  /* Stile per mobile (posizione in alto a destra) */
+  @media (max-width: 767.98px) {
+    .content-item .badge {
+      top: 8px !important;
+      right: 8px;
+      left: auto !important;
+    }
+  }
